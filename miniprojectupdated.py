@@ -23,7 +23,7 @@ def tick():
 tick()
 
 window.title("CZ1003 Mini Project")
-window.geometry("700x520")
+window.geometry("700x420")
 
 mainpage= StringVar()
 Mainpage = Label( window, textvariable=mainpage, font = ("arial 20 bold italic"))#, relief=RAISED 
