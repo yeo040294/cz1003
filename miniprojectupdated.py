@@ -1,11 +1,13 @@
 from tkinter import *
 import time
+from itertools import chain
+
 
 window = Tk()
 
 time1 = ''
-clock = Label(window, font=('times', 20, 'bold'), bg= 'green')
-clock.pack(fill=BOTH, expand=1)
+clock = Label(window, font=('times', 15, 'bold'))
+
 def tick():
     global time1
     # get the current local time from the PC
@@ -21,22 +23,18 @@ def tick():
 tick()
 
 window.title("CZ1003 Mini Project")
-window.geometry("500x430")
+window.geometry("700x520")
 
 mainpage= StringVar()
-Mainpage = Label( window, textvariable=mainpage, font = ("arial 15 bold italic"), relief=RAISED )
+Mainpage = Label( window, textvariable=mainpage, font = ("arial 20 bold italic"))#, relief=RAISED 
 mainpage.set("Welcome to NTU NorthSpine Food Section")
 
-logo = PhotoImage(file= "canteen.ppm")
+logo = PhotoImage(file= "rsz_1panda_face.ppm")
 
 
 
-
-
-
-
-buttontoday = Button(window, text="View Today Menu")
-buttonanotherday = Button(window, text="View Other Day Menu")
+buttontoday = Button(window, text="View Today Menu",font = 8, width=(20) )
+buttonanotherday = Button(window, text="View Other Day Menu", font = 8, width=(20))
 Mainpage.pack()
 
 
@@ -44,8 +42,12 @@ Mainpage.pack()
 frame = Frame(window, width= 400,height = 300)
 frame.pack_propagate(0)
 frame.pack()
-
+frame.place(x= 10, y= 60)
 Label(frame, image = logo) .pack(fill=BOTH)   #logo
+clock.pack() 
+clock.place(x= 280, y= 360)
 buttontoday.pack()
+buttontoday.place(x= 400, y= 120)
 buttonanotherday.pack()
+buttonanotherday.place(x= 400, y= 220)
 window.mainloop()
