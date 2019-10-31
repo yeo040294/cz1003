@@ -1,10 +1,14 @@
 from tkinter import *
 import time
 from itertools import chain
+import amenddropdown
+
 
 
 window = Tk()
 
+
+#clock format
 time1 = ''
 clock = Label(window, font=('times', 15, 'bold'))
 
@@ -22,23 +26,32 @@ def tick():
     clock.after(200, tick)
 tick()
 
+
+
+
+
+#window size 
 window.title("CZ1003 Mini Project")
 window.geometry("700x420")
 
+
+#main page title
 mainpage= StringVar()
 Mainpage = Label( window, textvariable=mainpage, font = ("arial 20 bold italic"))#, relief=RAISED 
 mainpage.set("Welcome to NTU NorthSpine Food Section")
 
+
+#logo input
 logo = PhotoImage(file= "rsz_1panda_face.ppm")
 
 
-
-buttontoday = Button(window, text="View Today Menu",font = 8, width=(20) )
-buttonanotherday = Button(window, text="View Other Day Menu", font = 8, width=(20))
+#button display
+buttontoday = Button(window, text="View Today Menu",font = 8, width=(20))
+buttonanotherday = Button(window, text="View Other Day Menu", font = 8, width=(20),command= amenddropdown.amended)
 Mainpage.pack()
 
 
-
+#display layout 
 frame = Frame(window, width= 400,height = 300)
 frame.pack_propagate(0)
 frame.pack()
@@ -50,4 +63,6 @@ buttontoday.pack()
 buttontoday.place(x= 400, y= 120)
 buttonanotherday.pack()
 buttonanotherday.place(x= 400, y= 220)
+
+
 window.mainloop()
