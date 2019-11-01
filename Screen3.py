@@ -22,8 +22,8 @@ def create(stallName):
     today = StallList(0)[datetime.today().weekday()]
     DisplayMenu(window,"Lunch", today, stallName)
 
-
 def show():
+    window = Toplevel()
     window.mainloop()
 
 
