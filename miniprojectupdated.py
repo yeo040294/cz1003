@@ -2,7 +2,7 @@ from tkinter import *
 import time
 from itertools import chain
 import amenddropdown
-
+import Screen2
 
 
 window = Tk()
@@ -46,7 +46,7 @@ logo = PhotoImage(file= "rsz_1panda_face.ppm")
 
 
 #button display
-buttontoday = Button(window, text="View Today Menu",font = 8, width=(20))
+buttontoday = Button(window, text="View Today Menu",font = 8, width=(20), command = Screen2.screen)
 buttonanotherday = Button(window, text="View Other Day Menu", font = 8, width=(20),command= amenddropdown.amended)
 Mainpage.pack()
 
